@@ -9,3 +9,7 @@ gem 'dm-migrations'
 gem 'capybara'
 gem 'rspec'
 gem 'sinatra'
+
+group :test do
+  gem 'database_cleaner'
+end
