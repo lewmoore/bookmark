@@ -8,7 +8,7 @@ end
 
 feature 'viewing bookmarked links' do
   scenario 'user can see the bookmarks' do
-    Link.create(url: 'http://ww.makersacademy.com', title: 'Makers Academy')
+    Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
     visit('/links')
     expect(page).to have_content('Makers Academy')
   end
