@@ -1,7 +1,6 @@
 require "data_mapper"
 
 class Link
-
   include DataMapper::Resource
 
   has n, :tags, through: Resource
