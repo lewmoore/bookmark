@@ -1,5 +1,6 @@
 feature 'Tags' do
   scenario 'User can add tags to a new link' do
+    sign_up
     visit '/links/new'
     fill_in 'url', with: 'http://www.lynda.com'
     fill_in 'title', with: 'Welcome to Lynda'
@@ -11,6 +12,7 @@ feature 'Tags' do
   end
 
   scenario 'display links with bubbles tag only' do
+    sign_up
 
     visit('links/new')
     fill_in 'url', with: 'www.coinbase.co.uk'
@@ -37,6 +39,7 @@ feature 'Tags' do
   end
 
   scenario 'create a new link and assign it two tags' do
+    sign_up
     visit('/links/new')
     fill_in 'url', with: 'www.makersacademy.com'
     fill_in 'title', with: 'Makers Academy'

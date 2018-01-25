@@ -1,5 +1,6 @@
 feature 'Creating New Links' do
   scenario 'user can add new links with address and title' do
+    sign_up
     visit '/links/new'
     fill_in 'url', with: 'http://www.lynda.com'
     fill_in 'title', with: 'Welcome to Lynda'
