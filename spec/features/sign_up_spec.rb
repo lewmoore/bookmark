@@ -1,4 +1,5 @@
 feature 'Signing Up' do
+
   scenario 'user sees sign in form on landing page' do
     sign_up
 
@@ -11,15 +12,13 @@ feature 'Signing Up' do
     expect { sign_up }.to change(User, :count).by(1)
   end
 
-  scenario 'user does not validate password' do
-    def bad_sign_up
-      visit('/')
-      fill_in 'username', with: 'lewis@gmail.com'
-      fill_in 'password', with: '123'
-      fill_in 'password_confirmation', with: '234'
-      click_button('Sign Up')
-    end
-
+  scenario 'user count does not increase if password validation fails' do
     expect { bad_sign_up }.to_not change(User, :count)
+  end
+
+  scenario 'failing password validation redirects to sign up page' do
+    bad_sign_up
+
+    expect(current_path).to eq '/'
   end
 end
