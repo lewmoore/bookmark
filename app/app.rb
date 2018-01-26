@@ -30,7 +30,11 @@ class Bookmark_manager < Sinatra::Base
                        password: params[:password],
                        password_confirmation: params[:password_confirmation])
     session[:user_id] = user.id
-    redirect '/links'
+    if user.id == nil
+      redirect '/'
+    else
+      redirect '/links'
+    end
   end
 
   post '/links' do
